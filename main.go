@@ -110,13 +110,13 @@ func main() {
 
 	switch {
 	case 0 <= cpu_perc && cpu_perc < warn:
-		fmt.Printf("CPU: OK - TotalAvg: %%%2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
+		fmt.Printf("CPU: OK - TotalAvg: %%%.2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
 		os.Exit(0)
 	case warn <= cpu_perc && cpu_perc < crit:
-		fmt.Printf("CPU: WARNING - TotalAvg: %%%2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
+		fmt.Printf("CPU: WARNING - TotalAvg: %%%.2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
 		os.Exit(1)
 	case crit <= cpu_perc:
-		fmt.Printf("CPU: CRITICAL - TotalAvg: %%%2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
+		fmt.Printf("CPU: CRITICAL - TotalAvg: %%%.2f|avg=%%%2f;;;; user=%.0f;;;; nice=%.0f;;;; system=%.0f;;;; idle=%.0f;;;; \n", cpu_perc, cpu_perc, user, nice, system, idle)
 		os.Exit(2)
 	default:
 		fmt.Printf("UNKNOWN value.\n")
